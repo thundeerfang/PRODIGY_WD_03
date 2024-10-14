@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    position: relative;
+    min-height: 100vh;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F7F7F7; 
+    margin-bottom: 10px;
+    user-select: none;
+}
+
+
+header {
+    padding-top: 30px;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    margin: 0 auto;
+    padding: 20px 0;
+    width: min(50vw, 350px);
+    text-align: center;
+    font-size: clamp(2rem, 10vw, 2.5rem);
+    background-color: #4A90E2; 
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1:hover {
+    background-color: #F5A623; 
+    color: #fff;
+}
+
+
+main p {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: clamp(1.5rem, 10vw, 2rem);
+    color: #333;
+}
+
+main .gameboard {
+    width: min(60vw, 370px);
+    height: min(60vw, 370px);
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #EAEAEA; 
+    display: grid;
+    gap: 3px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gameboard .gamecell {
+    border: 2px solid #4A90E2;
+    font-size: clamp(2rem, 15vw, 5rem);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.gameboard .gamecell:hover {
+    background-color: #D8D8D8; 
+    transform: scale(1.05);
+}
+
+main button {
+    display: block;
+    font: inherit;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0 auto;
+    padding: 20px 70px;
+    border: none;
+    border-radius: 10px;
+    background-color: #4A90E2;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+main button:hover {
+    background-color: #F5A623; 
+}
+
+
+dialog {
+    position: fixed;
+    border: none;
+    border-radius: 20px;
+    user-select: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.result-dialog {
+    top: 300px;
+    left: calc(50% - (min(85vw, 500px) / 2));
+}
+
+.result-dialog h1 {
+    padding: 70px 10px;
+    width: min(85vw, 500px);
+    text-align: center;
+    font-size: clamp(1.2rem, 8vw, 2.3rem);
+    font-weight: 700;
+    background-color: #4A90E2; 
+    color: white;
+    border-radius: 10px;
+}
+
+
+.names-dialog {
+    top: 200px;
+    left: calc(50% - (min(85vw, 700px) / 2));
+}
+
+.names-dialog form {
+    padding: 50px 0 70px 0;
+    width: min(85vw, 700px);
+    display: grid;
+    row-gap: 50px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    justify-items: center;
+}
+
+.names-dialog p.title {
+    grid-column: 1 / -1;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.names-dialog p.player-name {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.names-dialog input {
+    width: 230px;
+    padding: 5px;
+    border: 2px solid #4A90E2; 
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.names-dialog button {
+    grid-column: 1 / -1;
+    margin-top: 25px;
+    padding: 25px 70px;
+    background-color: #F5A623; 
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font: inherit;
+    font-size: 1.4rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.names-dialog button:hover {
+    background-color: #ffb347;
+}
